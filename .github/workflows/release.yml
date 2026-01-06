@@ -1,16 +1,13 @@
 name: Build EXE (Dev Branch)
 
 on:
-  # 1. Trigger when pushing to 'dev' branch
   push:
+    # Trigger on push to 'dev' branch
     branches: [ "dev" ]
-  
-  # 2. Trigger when pushing Tags (for final releases)
-  create:
-    tags:
-      - 'v*'
+    # AND trigger on push to tags starting with 'v'
+    tags: [ "v*" ]
 
-  # 3. Allow Manual Button Click
+  # Allow Manual Button Click
   workflow_dispatch:
 
 permissions:
